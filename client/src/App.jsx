@@ -5,7 +5,7 @@ import TopHeadlines from "./components/TopHeadlines";
 import CountryNews from "./components/CountryNews";
 import SearchNews from "./components/SearchNews";
 import Footer from "./components/Footer";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [theme, setTheme] = useState("dark-theme");
@@ -16,8 +16,8 @@ function App() {
   }, [theme]);
 
   // Define themes
-  const bgClasses = theme === "dark-theme" 
-    ? "bg-[radial-gradient(circle_at_top_left,_#1e1b4b_0%,_#0f172a_35%,_#31104e_65%,_#020617_100%)] text-white" 
+  const bgClasses = theme === "dark-theme"
+    ? "bg-[radial-gradient(circle_at_top_left,_#1e1b4b_0%,_#0f172a_35%,_#31104e_65%,_#020617_100%)] text-white"
     : "bg-slate-50 text-slate-900";
 
   const overlayClasses = theme === "dark-theme"
