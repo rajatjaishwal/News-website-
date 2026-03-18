@@ -7,6 +7,8 @@ function AllNews({ theme }) {
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const [totalResults, setTotalResults] = useState(0);
+
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -37,7 +39,7 @@ function AllNews({ theme }) {
         setError(null);
 
         fetch(
-            `https://news-aggregator-dusky.vercel.app/all-news?page=${page}&pageSize=${pageSize}`
+            `${API_BASE_URL}/all-news?page=${page}&pageSize=${pageSize}`
         )
             .then((response) => {
                 if (response.ok) {

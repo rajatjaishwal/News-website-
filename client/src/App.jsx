@@ -25,7 +25,7 @@ function App() {
     : "bg-white/50 backdrop-blur-sm";
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className={`min-h-screen transition-colors ${bgClasses}`}>
         <div className={`min-h-screen ${overlayClasses}`}>
           <Header theme={theme} setTheme={setTheme} />
@@ -42,7 +42,7 @@ function App() {
           <Footer theme={theme} />
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

@@ -21,6 +21,8 @@ function EverythingCard(props) {
     const labelColor = isDark ? "text-gray-400" : "text-slate-500";
     const hoverBorder = isDark ? "hover:border-violet-500/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]" : "hover:border-violet-400/50 hover:shadow-lg";
 
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
     const handleAnalyze = async (e) => {
         e.preventDefault();
         if (aiSummary) {
@@ -30,7 +32,7 @@ function EverythingCard(props) {
         setIsAnalyzing(true);
         setAiError(null);
         try {
-            const response = await fetch("http://localhost:3000/summarize", {
+            const response = await fetch(`${API_BASE_URL}/summarize`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
